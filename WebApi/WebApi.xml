@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:WebApi.Controllers.UsuarioController">
+            <summary>
+            UsuarioController
+            </summary>
+            <param ></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.UsuarioController.Logar(WebApi.Models.Usuarios.LoginViewModelInput)">
+            <summary>
+            Logar
+            </summary>
+            <param name="_loginViewModelInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.UsuarioController.Registrar(WebApi.Models.Usuarios.RegistroViewModelInput)">
+            <summary>
+            Registrar
+            </summary>
+            <param name="_registrarViewModelInput"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApi.Models.Usuarios.LoginViewModelInput">
+            <summary>
+             LoginViewModelInput
+            </summary>
+            <param ></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApi.Models.Usuarios.RegistroViewModelInput">
+            <summary>
+             RegistroViewModelInput
+            </summary>
+            <param ></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApi.Startup">
+            <summary>
+            Class Startup
+            </summary>
+            <param ></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+             Startup
+            </summary>
+            <param ></param>
+            <returns></returns>
+        </member>
+        <member name="P:WebApi.Startup.Configuration">
+            <summary>
+             Configuration
+            </summary>
+            <param ></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+             This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param ></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param ></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
