@@ -8,6 +8,10 @@ using WebApi.Models.Usuarios;
 using Swashbuckle.AspNetCore.Annotations;
 using WebApi.Models;
 using WebApi.Filters;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace WebApi.Controllers
 {
@@ -35,12 +39,33 @@ namespace WebApi.Controllers
         [ValidacaoModelStateCustomizado]
         public IActionResult Logar(LoginViewModelInput _loginViewModelInput){
 
+            var usuarioViewModelOutput = new UsuarioViewModelOutput(){
+                Codigo ="1",
+                Login="fe",
+                Email = "f@" 
+            };
             
-           // if(!ModelState.IsValid){
-           //     return BadRequest(new ValidaCampoViewModelOutput(ModelState.SelectMany(sm => sm.Value.Errors).Select(s=> s.ErrorMessage)));
-           // }
+            var secret = Encoding.ASCII.GetBytes("KJsmjfk375Mj3874nd-0ssd\\dsdsd-0");
+            var symmetricSecurityKey = new SymmetricSecurityKey(secret);
+            var securityTokenDescriptor = new SecurityTokenDescriptor{
+                Subject = new ClaimsIdentity( new Claim[]{
+                    new Claim( ClaimTypes.NameIdentifier, usuarioViewModelOutput.Codigo.ToString()),
+                    new Claim( ClaimTypes.Name, usuarioViewModelOutput.Login.ToString()),
+                    new Claim( ClaimTypes.Email, usuarioViewModelOutput.Email.ToString())
+                }),
+                Expires = DateTime.UtcNow.AddDays(1),
+                SigningCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature)
+            };
+            var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
+            var tokenGenerated = jwtSecurityTokenHandler.CreateToken(securityTokenDescriptor);
+            var token = jwtSecurityTokenHandler.WriteToken(tokenGenerated);
             
-            return Ok(_loginViewModelInput);
+            return Ok(new
+                {
+                    Token = token,
+                    Usuario = _loginViewModelInput
+                }
+            );
         }
 
         

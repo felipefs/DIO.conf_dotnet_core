@@ -4,6 +4,25 @@
         <name>WebApi</name>
     </assembly>
     <members>
+        <member name="T:WebApi.Controllers.CursoController">
+            <summary>
+            UsuarioController
+            </summary>
+            <param ></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.CursoController.Post(WebApi.Models.Cursos.CursoViewModelInput)">
+            <summary>
+            Permite cadastrar um curso
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.CursoController.Get">
+            <summary>
+            Este serviço permite obter todos os cursos ativos do usuário
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:WebApi.Controllers.UsuarioController">
             <summary>
             UsuarioController
@@ -35,6 +54,13 @@
         <member name="T:WebApi.Models.Usuarios.RegistroViewModelInput">
             <summary>
              RegistroViewModelInput
+            </summary>
+            <param ></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApi.Models.Usuarios.UsuarioViewModelOutput">
+            <summary>
+             UsuarioViewModelOutput
             </summary>
             <param ></param>
             <returns></returns>
