@@ -11,3 +11,12 @@ dotnet add WebApi.csproj package Swashbuckle.AspNetCore.Annotations
 dotnet add WebApi.csproj package Microsoft.AspNetCore.Authentication
 dotnet add WebApi.csproj package Microsoft.AspNetCore.Authentication.JwtBearer
 
+dotnet add WebApi.csproj package Microsoft.EntityFrameworkCore
+dotnet add WebApi.csproj package Microsoft.EntityFrameworkCore.Relational
+dotnet add WebApi.csproj package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add WebApi.csproj package Microsoft.EntityFrameworkCore.Tools
+
+dotnet tool update --global dotnet-ef 
+
+dotnet ef migrations add Inicio
+

@@ -41,7 +41,7 @@
             <summary>
             Registrar
             </summary>
-            <param name="_registrarViewModelInput"></param>
+            <param name="_registrarViewModelInput">View model de Registro</param>
             <returns></returns>
         </member>
         <member name="T:WebApi.Models.Usuarios.LoginViewModelInput">

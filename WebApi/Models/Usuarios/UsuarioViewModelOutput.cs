@@ -17,6 +17,6 @@ namespace WebApi.Models.Usuarios
        public string Email { get; set; }
      
        [Required(ErrorMessage = "O Codigo é obrigatório")]
-       public string Codigo { get; set; }
+       public int Codigo { get; set; }
     }
 }
